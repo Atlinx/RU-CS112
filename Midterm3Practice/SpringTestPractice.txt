@@ -1,0 +1,29 @@
+int[] maxHeap1, int[] maxHeap2
+
+int[] finalHeap = new int[maxHeap1.length + maxHeap2.length - 1];
+
+int heap1Idx = 1;
+int heap2Idx = 1;
+for (int i = 1; i < finalHeap.length; i++) {
+	if (heap1Idx >= maxHeap1.length) {
+		finalHeap[i] = heap2[heap2Idx];
+		heap2Idx++;
+	} else if (heap2Idx >= maxHeap2.length) {
+		finalHeap[i] = heap1[heap1Idx];
+		heap1Idx++;
+	} else {
+		if (heap1[heap1Idx] > heap2[heap2Idx]) {
+			finalHeap[i] = heap1[heap1Idx];
+			heap1Idx++;
+		} else {
+			finalHeap[i] = heap2[heap2Idx];
+			heap2Idx++;
+		}
+	}
+}
+
+d) i)
+copy keys of hashtable into new table
+heapify, then heapsort
+ii)
+Iterate through sorted list and fetch mp3 from hash table using each song and play it.b
